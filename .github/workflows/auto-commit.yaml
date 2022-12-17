@@ -34,6 +34,7 @@ jobs:
       - run: |
           git log --oneline
           git branch
-          git pull
+          git fetch
+          git branch -a
           git log --oneline
 

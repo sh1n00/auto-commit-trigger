@@ -10,8 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.ref }}
       - run: |
           pwd
           ls
@@ -19,7 +18,6 @@ jobs:
           touch test
           echo "this is test" >> test
           git branch
-          git remote -v
       - uses: stefanzweifel/git-auto-commit-action@v4.15.1
         with:
           commit_message: Generate OpanApi YAML
@@ -28,10 +26,14 @@ jobs:
     runs-on: ubuntu-18.04
     needs: formatted
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+          ref: ${{ github.ref }}
       - run: |
           git log --oneline
           git branch
           git fetch
           git log --oneline
-          git remote -v
 

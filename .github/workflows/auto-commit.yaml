@@ -27,6 +27,8 @@ jobs:
     runs-on: ubuntu-18.04
     needs: formatted
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - run: |
           git log --oneline
           git branch

@@ -9,8 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          touch ~/test
-          echo "this is test" >> ~/test
+          ls
+          touch test
+          echo "this is test" >> test
   auto-commit:
     name: auto-commit
     runs-on: ubuntu-latest

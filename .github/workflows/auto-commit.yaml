@@ -28,7 +28,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - run: |
-        git log --oneline
-        git pull
-        git log --oneline
+          git log --oneline
+          git pull
+          git log --oneline
 

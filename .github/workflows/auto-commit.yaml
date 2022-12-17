@@ -11,6 +11,7 @@ jobs:
       - run: |
           pwd
           ls
+          ls ~
           touch test
           echo "this is test" >> test
   auto-commit:

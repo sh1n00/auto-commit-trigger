@@ -19,6 +19,7 @@ jobs:
           touch test
           echo "this is test" >> test
           git branch
+          git remote -v
       - uses: stefanzweifel/git-auto-commit-action@v4.15.1
         with:
           commit_message: Generate OpanApi YAML
@@ -34,4 +35,5 @@ jobs:
           git branch
           git fetch
           git log --oneline
+          git remote -v
 

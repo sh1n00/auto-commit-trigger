@@ -8,9 +8,7 @@ jobs:
   formatted:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
-      - name: make diff
+      - uses: actions/checkout@master
       - run: |
           touch test
           echo "this is test" >> test

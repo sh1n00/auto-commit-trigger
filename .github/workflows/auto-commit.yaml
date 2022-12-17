@@ -12,12 +12,8 @@ jobs:
         with:
           ref: ${{ github.ref }}
       - run: |
-          pwd
-          ls
-          ls ~
           touch test
           echo "this is test" >> test
-          git branch
       - uses: stefanzweifel/git-auto-commit-action@v4.15.1
         with:
           commit_message: Generate OpanApi YAML
@@ -29,11 +25,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 1
+          fetch-depth: 0
           ref: ${{ github.ref }}
       - run: |
-          git log --oneline
-          git branch
-          git fetch
           git log --oneline
 

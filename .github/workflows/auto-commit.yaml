@@ -5,6 +5,13 @@ on:
   pull_request:
 
 jobs:
+  formatted:
+    runs-on: ubuntu-latest
+    steps:
+      - name: make diff
+      run: |
+        touch test
+        echo "this is test" >> test
   auto-commit:
     name: auto-commit
     runs-on: ubuntu-latest
@@ -12,10 +19,6 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4.15.1
         with:
           commit_message: Generate OpanApi YAML
-      - name: make diff
-        run: |
-          touch test
-          echo "this is test" >> test
 
   build:
     runs-on: ubuntu-18.04

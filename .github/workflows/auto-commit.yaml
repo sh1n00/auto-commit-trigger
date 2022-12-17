@@ -8,7 +8,6 @@ jobs:
   formatted:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
       - run: |
           touch test
           echo "this is test" >> test

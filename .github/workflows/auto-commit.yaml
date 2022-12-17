@@ -14,9 +14,11 @@ jobs:
           touch test
           echo "this is test" >> test
   auto-commit:
-    name: auto-commit
     runs-on: ubuntu-latest
     steps:
+      -run: |
+        pwd
+        ls
       - uses: stefanzweifel/git-auto-commit-action@v4.15.1
         with:
           commit_message: Generate OpanApi YAML

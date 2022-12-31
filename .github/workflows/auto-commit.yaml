@@ -1,4 +1,4 @@
-name: auto-commit
+name: auto-commit-trigger
 
 on:
   push:
@@ -10,13 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: ${{ github.ref }}
+          token: ${{ secrets.PAT }}
       - run: |
           touch test
           echo "this is test" >> test
       - uses: stefanzweifel/git-auto-commit-action@v4.15.1
         with:
-          commit_message: Generate OpanApi YAML
+          commit_message: auto-commit
 
   build:
     runs-on: ubuntu-18.04
@@ -24,9 +24,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          ref: ${{ github.ref }}
       - run: |
           git log --oneline
 

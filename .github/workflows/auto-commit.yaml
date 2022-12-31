@@ -12,6 +12,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
       - run: |
+          echo ${{ secrets.PAT }}
           touch test
           echo "this is test" >> test
       - uses: stefanzweifel/git-auto-commit-action@v4.15.1

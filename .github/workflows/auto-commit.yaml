@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.PAT }}
+          repository: sh1n00/auto-commit-trigger
       - run: |
           echo ${{ secrets.PAT }}
           touch test
